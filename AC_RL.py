@@ -135,7 +135,7 @@ def get_expected_return(
   # 从后一个时间步的收益反向累计总收益
   # Start from the end of `rewards` and accumulate reward sums
   # into the `returns` array
-  rewards = tf.cast(rewards[::-1], dtype=tf.float32) # 将收益序列
+  rewards = tf.cast(rewards[::-1], dtype=tf.float32) # 将收益序列逆序
   discounted_sum = tf.constant(0.0)
   discounted_sum_shape = discounted_sum.shape
   for i in tf.range(n):
